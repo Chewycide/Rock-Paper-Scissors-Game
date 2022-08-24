@@ -1,0 +1,2 @@
+# ROCK PAPER SCISSORS GAME
+Simple RPS game using PyQt5
