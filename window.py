@@ -40,12 +40,19 @@ class Window(QWidget):
 
 
         self.rock_button = QPushButton("ROCK")
+        self.rock_button.clicked.connect(self.rock)
+
 
         self.paper_button = QPushButton("PAPER")
+        self.paper_button.clicked.connect(self.paper)
+
 
         self.scissors_button = QPushButton("SCISSORS")
+        self.scissors_button.clicked.connect(self.scissors)
+
 
         self.cpu_choice_text = QLabel("Cpu is thinking...")
+
 
         user_hbox.addWidget(self.rock_button)
         user_hbox.addWidget(self.paper_button)
@@ -57,3 +64,18 @@ class Window(QWidget):
         vbox_main.addWidget(user_hbox_frame)
 
         self.setLayout(vbox_main)
+
+    
+    def rock(self):
+
+        self.cpu_choice_text.setText("USER_ROCK")
+
+
+    def paper(self):
+
+        self.cpu_choice_text.setText("USER_PAPER")
+
+
+    def scissors(self):
+
+        self.cpu_choice_text.setText("USER_SCISSORS")
