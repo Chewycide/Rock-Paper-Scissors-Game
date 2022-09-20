@@ -6,3 +6,4 @@ class Game:
         
         self.choices = ["Rock", "Paper", "Scissors"]
         
+    
