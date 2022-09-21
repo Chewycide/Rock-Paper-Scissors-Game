@@ -5,9 +5,12 @@ from PyQt5.QtWidgets import (
     QPushButton,
     QVBoxLayout,
     QHBoxLayout,
-    QFrame
+    QFrame,
+    QMessageBox
     )
 from PyQt5.QtCore import Qt
+from game import Game
+import random as rd
 
 
 class Window(QWidget):
@@ -15,6 +18,7 @@ class Window(QWidget):
     def __init__(self):
         
         super().__init__()
+        
         
         self.InitWindow()
         self.InitUI()
@@ -35,6 +39,10 @@ class Window(QWidget):
 
 
     def InitUI(self):
+
+        self.outcome_popup = QMessageBox()
+        self.outcome_popup.setWindowTitle(" ")
+
 
         vbox_main = QVBoxLayout()
         cpu_hbox = QHBoxLayout()
@@ -73,14 +81,30 @@ class Window(QWidget):
     
     def rock(self):
 
-        self.cpu_choice_text.setText("USER_ROCK")
+        n = 0
+        self.rps(n)
+
 
 
     def paper(self):
-
-        self.cpu_choice_text.setText("USER_PAPER")
+        
+        n = 1
+        self.rps(n)
 
 
     def scissors(self):
 
-        self.cpu_choice_text.setText("USER_SCISSORS")
+        n = 2
+        self.rps(n)
+
+    
+    def rps(self, choice):
+
+        self.cpu_choice = rd.randint(0, 2)
+
+        rps_game = Game()
+        self.cpu_choice_text.setText(rps_game.cpu_choice_func(self.cpu_choice))
+
+        self.outcome_popup.setText(rps_game.game_outcome(choice, self.cpu_choice))
+        self.outcome_popup.exec()
+        
