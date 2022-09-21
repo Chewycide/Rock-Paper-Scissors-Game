@@ -1,7 +1,12 @@
-from PyQt5.QtWidgets import (QWidget, QDesktopWidget,
-                            QLabel, QPushButton,
-                            QVBoxLayout, QHBoxLayout,
-                            QFrame)
+from PyQt5.QtWidgets import (
+    QWidget,
+    QDesktopWidget,
+    QLabel,
+    QPushButton,
+    QVBoxLayout,
+    QHBoxLayout,
+    QFrame
+    )
 from PyQt5.QtCore import Qt
 
 
