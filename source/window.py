@@ -9,7 +9,7 @@ from PyQt5.QtWidgets import (
     QMessageBox
     )
 from PyQt5.QtCore import Qt
-from game import Game
+from source.game import Game
 import random as rd
 
 

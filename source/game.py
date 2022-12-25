@@ -1,7 +1,8 @@
 import random as rd
 
-class Game:
 
+class Game:
+    """This is where the logic of the game is done"""
     def __init__(self):
         
         self.cpu_choices_list = ["Rock", "Paper", "Scissors"]
