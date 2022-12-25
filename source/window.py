@@ -14,7 +14,10 @@ import random as rd
 
 
 class Window(QWidget):
-
+    """
+        Window class renders the window that the application will
+        be embedded in 
+    """
     def __init__(self):
         
         super().__init__()
@@ -26,10 +29,10 @@ class Window(QWidget):
 
     
     def InitWindow(self):
+        """Initialize the window size and screen position"""
 
         self.setFixedSize(475, 350)
         self.setWindowTitle("RPS GAME")
-        # self.setWindowIcon(QIcon("assets/PIXELA_ORIGINAL_e.png"))
 
 
         qRectangle = self.frameGeometry()
@@ -39,6 +42,7 @@ class Window(QWidget):
 
 
     def InitUI(self):
+        """Initialize the User Interface"""
 
         self.outcome_popup = QMessageBox()
         self.outcome_popup.setWindowTitle(" ")
@@ -80,31 +84,29 @@ class Window(QWidget):
 
     
     def rock(self):
-
-        n = 0
-        self.rps(n)
-
+        """This method executes when ROCK button is pressed"""
+        return self.rps(0)
 
 
     def paper(self):
-        
-        n = 1
-        self.rps(n)
+        """This method executes when PAPER button is pressed"""
+        return self.rps(1)
 
 
     def scissors(self):
-
-        n = 2
-        self.rps(n)
+        """This method executes when SCISSORS button is pressed"""
+        return self.rps(2)
 
     
     def rps(self, choice):
-
+        """
+            Displays a popup displaying the outcome of the round
+        """
         self.cpu_choice = rd.randint(0, 2)
 
         rps_game = Game()
         self.cpu_choice_text.setText(rps_game.cpu_choice_func(self.cpu_choice))
 
         self.outcome_popup.setText(rps_game.game_outcome(choice, self.cpu_choice))
-        self.outcome_popup.exec()
+        return self.outcome_popup.exec()
         

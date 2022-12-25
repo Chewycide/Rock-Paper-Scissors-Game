@@ -6,18 +6,15 @@ class Game:
     def __init__(self):
         
         self.cpu_choices_list = ["Rock", "Paper", "Scissors"]
-        # self.cpu_choice = rd.randint(0, 2)
-        # self.cpu_choice_func(self.cpu_choice)
-        # self.game_outcome(self.choice, self.cpu_choice)
         
 
-    def cpu_choice_func(self, cpu):
-
+    def cpu_choice_func(self, cpu) -> str:
+        """Returns cpu choices in string type"""
         return self.cpu_choices_list[cpu]
 
 
-    def game_outcome(self, player, cpu):
-
+    def game_outcome(self, player, cpu) -> str:
+        """Returns the outcome of the round"""
         outcomes = [
             ["Draw.", "You Lose.", "You Win!"],
             ["You Win!", "Draw.", "You Lose."],
